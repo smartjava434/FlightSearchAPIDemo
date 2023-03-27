@@ -21,9 +21,9 @@ public class SortTypeValidator implements ConstraintValidator<SortTypeConstraint
 	@Override
 	public boolean isValid(String sortType, ConstraintValidatorContext cxt) {
 
-		/*
-		 * if (StringUtils.isBlank(sortType)) { return true; }
-		 */
+		
+		  if (StringUtils.isBlank(sortType)) { return true; }
+		 
 		return (SORT_TYPE_DURATION.equalsIgnoreCase(sortType) || SORT_TYPE_PRICE.equalsIgnoreCase(sortType)
 				|| SORT_TYPE_PRICE_AND_DURATION.equalsIgnoreCase(sortType));
 

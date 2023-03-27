@@ -44,6 +44,8 @@ public class FlightSearchServiceImpl implements FlightSearchService {
 			else if (Constants.SORT_TYPE_PRICE_AND_DURATION.equalsIgnoreCase(sortType)) {
 				comp = Comparator.comparing(Flight::getPrice).thenComparing(Comparator
 						.comparingDouble(e -> ChronoUnit.SECONDS.between(e.getDeparturetime(), e.getArrivaltime())));
+			}else {
+				comp = Comparator.comparing(Flight::getPrice);
 			}	
 
 			return list.stream().sorted(comp).collect(Collectors.toList());
