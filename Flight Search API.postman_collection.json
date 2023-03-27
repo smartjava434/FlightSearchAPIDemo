@@ -1,0 +1,221 @@
+{
+	"info": {
+		"_postman_id": "678506b9-3cf9-4cdb-a345-1351da096696",
+		"name": "Flight Search API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "SuccessScenarios",
+			"item": [
+				{
+					"name": "SearchByAllParameters&SortByPrice",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/flights?origin=BOM&destination=DEL&sortType=price",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"flights"
+							],
+							"query": [
+								{
+									"key": "origin",
+									"value": "BOM"
+								},
+								{
+									"key": "destination",
+									"value": "DEL"
+								},
+								{
+									"key": "sortType",
+									"value": "price"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SearchByAllParams&SortByDuration",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/flights?origin=BOM&destination=DEL&sortType=duration",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"flights"
+							],
+							"query": [
+								{
+									"key": "origin",
+									"value": "BOM"
+								},
+								{
+									"key": "destination",
+									"value": "DEL"
+								},
+								{
+									"key": "sortType",
+									"value": "duration"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SearchByAllParams&SortByPrice&Duration",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/flights?origin=BOM&destination=DEL&sortType=price_duration",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"flights"
+							],
+							"query": [
+								{
+									"key": "origin",
+									"value": "BOM"
+								},
+								{
+									"key": "destination",
+									"value": "DEL"
+								},
+								{
+									"key": "sortType",
+									"value": "price_duration"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "SearchByAllParametersWithoutSortType",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/flights?origin=BOM&destination=DEL",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"flights"
+							],
+							"query": [
+								{
+									"key": "origin",
+									"value": "BOM"
+								},
+								{
+									"key": "destination",
+									"value": "DEL"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "ValidationScenarios",
+			"item": [
+				{
+					"name": "SearchByOrigin&DestinationWithSortTypeValidation",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/flights?origin=BOM&destination=DEL&sortType",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"flights"
+							],
+							"query": [
+								{
+									"key": "origin",
+									"value": "BOM"
+								},
+								{
+									"key": "destination",
+									"value": "DEL"
+								},
+								{
+									"key": "sortType",
+									"value": null
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "InputValidationInEndpoint",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/flights?origin=&destination=DEL&sortType=price",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"flights"
+							],
+							"query": [
+								{
+									"key": "origin",
+									"value": ""
+								},
+								{
+									"key": "destination",
+									"value": "DEL"
+								},
+								{
+									"key": "sortType",
+									"value": "price"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ValidateEmptyResponse",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
